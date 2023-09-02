@@ -1,3 +1,4 @@
+// Copyright 2023 School21 @gruntmet Snezhana Valeeva
 #include <gtest/gtest.h>
 
 #include "../model/badexpression.h"

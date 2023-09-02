@@ -26,9 +26,9 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets PrintSupport)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets PrintSupport)
 
 set(MODEL_SOURCES 
-    model/Tokenizer.cc
-    model/Translator.cc
-    model/Calculator.cc
+    model/tokenizer.cc
+    model/translator.cc
+        model/calculator.cc
 )
 
 set(CONTROLLER_SOURCES 
@@ -90,7 +90,7 @@ enable_testing()
 
 add_executable(
   tokenizer_test
-  tests/TokenizerTest.cc
+  tests/tokenizertest.cc
 )
 
 target_link_libraries(
@@ -101,7 +101,7 @@ target_link_libraries(
 
 add_executable(
   model_integration
-  tests/ModelTest.cc
+        tests/modeltest.cc
 )
 
 target_link_libraries(

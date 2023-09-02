@@ -1,3 +1,4 @@
+// Copyright 2023 School21 @gruntmet Snezhana Valeeva
 #include "mainwindow.h"
 
 #include <QDoubleValidator>
@@ -5,6 +6,7 @@
 #include <QFontDatabase>
 #include <QTextStream>
 #include <regex>
+#include <string>
 
 #include "./ui_mainwindow.h"
 

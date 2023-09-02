@@ -1,4 +1,7 @@
+// Copyright 2023 School21 @gruntmet Snezhana Valeeva
 #include "translator.h"
+
+#include <string>
 
 namespace s21 {
 std::list<std::string> ShuntingYardTranslator::Translate(

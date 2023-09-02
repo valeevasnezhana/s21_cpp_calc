@@ -1,3 +1,4 @@
+// Copyright 2023 School21 @gruntmet Snezhana Valeeva
 #include "calculator.h"
 
 #include <clocale>

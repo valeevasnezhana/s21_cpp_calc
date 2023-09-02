@@ -1,4 +1,7 @@
+// Copyright 2023 School21 @gruntmet Snezhana Valeeva
 #include "tokenizer.h"
+
+#include <algorithm>
 
 #include "badexpression.h"
 
@@ -163,13 +166,13 @@ void Tokenizer::AdvancePosition() noexcept {
     pos_ += std::min(func->size(), rem) * (func != kFunctions.end());
   } else {
     for (; pos_ != end_ && (GetTokenType(*pos_) == TokenType::kDigit); ++pos_) {
-    };
+    }
     if (pos_ != end_ && *pos_ == 'e') {
       ++pos_;
       if (pos_ != end_ && (*pos_ == '+' || *pos_ == '-')) ++pos_;
       for (; pos_ != end_ && (GetTokenType(*pos_) == TokenType::kDigit);
            ++pos_) {
-      };
+      }
     }
   }
 }
