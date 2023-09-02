@@ -135,7 +135,7 @@ operation. \return True if the expression has changed, false otherwise.
   bool ExpressionChanged() noexcept { return fixed_; }
 
  private:
-  typedef std::string_view::const_iterator position;
+  using position = std::string_view::const_iterator;
   /*!
 
   \var Tokenizer::kOperators
@@ -225,11 +225,6 @@ operation. \return True if the expression has changed, false otherwise.
   constexpr bool MultiplySkipped() const noexcept;
 
   /**
-   * @brief Checks if a function is followed by an invalid token.
-   * @return true if a function is followed by an invalid token.
-   */
-  constexpr bool FunctionEmpty() const noexcept;
-  /**
    * @brief Checks if a function is not followed by an open bracket.
    * @return true if a function is not followed by an open bracket.
    */
@@ -266,7 +261,8 @@ operation. \return True if the expression has changed, false otherwise.
 \var Tokenizer::prev_token_
 \brief The previous TokenType during the tokenizing process.
 */
-  TokenType prev_token_;
+  TokenType prev_token_ = TokenType::kUndefined;
+  ;
 
   /*!
 
@@ -274,21 +270,22 @@ operation. \return True if the expression has changed, false otherwise.
 \var Tokenizer::current_token_
 \brief The current TokenType during the tokenizing process.
 */
-  TokenType current_token_;
+  TokenType current_token_ = TokenType::kUndefined;
+  ;
   /*!
 
 \private
 \var Tokenizer::push_
 \brief The current parsing state of the tokenizing process.
 */
-  State push_;
+  State push_ = State::kPush;
   /*!
 
 \private
 \var Tokenizer::brackets_
 \brief A stack for tracking open brackets.
 */
-  std::stack<char> brackets_;
+  std::stack<char> brackets_ = std::stack<char>();
   /*!
 
 \private
@@ -296,14 +293,14 @@ operation. \return True if the expression has changed, false otherwise.
 \brief A position iterator pointing to the current symbol in the input
 expression.
 */
-  position pos_;
+  position pos_ = std::string_view("").begin();
   /*!
 
 \private
 \var Tokenizer::end_
 \brief A position iterator pointing to the end of the input expression.
 */
-  position end_;
+  position end_ = std::string_view("").end();
 
   /*!
 
@@ -312,7 +309,7 @@ expression.
 \brief A boolean flag indicating if the expression has changed since the last
 tokenizing operation.
 */
-  bool fixed_;
+  bool fixed_ = false;
 };
 }  // namespace s21
 

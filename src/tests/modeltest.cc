@@ -7,8 +7,8 @@ typedef s21::DefaultModel TestingModel;
 
 class ModelIntegrationTest : public ::testing::Test {
  protected:
-  void SetUp() { subject = new TestingModel; }
-  void TearDown() { delete subject; }
+  void SetUp() override { subject = new TestingModel; }
+  void TearDown() override { delete subject; }
   s21::ICalculationModel* subject;
   double eps = 1e-7;
 };

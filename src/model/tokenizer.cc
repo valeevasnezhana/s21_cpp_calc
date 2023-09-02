@@ -120,10 +120,6 @@ constexpr bool Tokenizer::MultiplySkipped() const noexcept {
           current_token_ == TokenType::kFunction);
 }
 
-constexpr bool Tokenizer::FunctionEmpty() const noexcept {
-  return prev_token_ == TokenType::kFunction && !IsNumeric(current_token_);
-}
-
 constexpr bool Tokenizer::BracketSkipped() const noexcept {
   return prev_token_ == TokenType::kFunction &&
          current_token_ != TokenType::kOpenBracket;

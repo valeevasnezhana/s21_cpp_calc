@@ -90,4 +90,8 @@ add_lcov_definition:
 		$(eval CMAKE_DEFINES += -DCMAKE_CXX_FLAGS="-fprofile-arcs -ftest-coverage -fno-elide-constructors")
 		$(eval CMAKE_DEFINES += -DCMAKE_EXE_LINKER_FLAGS="-fprofile-arcs")
 
+.PHONY: valgrind_docker_test
+valgrind_docker_test:
+	cd ../materials/build/Valgrind/ && sh run.sh
+
 # --no-external

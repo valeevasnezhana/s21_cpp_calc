@@ -71,8 +71,10 @@ class RPNCalculator final {
                             [](double lhs, double rhs) { return lhs - rhs; }),
              std::make_pair("*",
                             [](double lhs, double rhs) { return lhs * rhs; }),
-             std::make_pair(
-                 "/", [](double lhs, double rhs) { return lhs / rhs; })}) {}
+             std::make_pair("/",
+                            [](double lhs, double rhs) { return lhs / rhs; })}),
+        current_token_(TokenType::kUndefined),
+        calc_stack_() {}
 
   using TokenType = Tokenizer::TokenType;
 

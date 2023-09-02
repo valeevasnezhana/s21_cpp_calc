@@ -77,9 +77,11 @@ class ShuntingYardTranslator final {
                TokenType::kFunction;
   }
 
-  std::stack<std::string>
-      operator_stack_;      /**< Stack for holding operators and functions*/
-  TokenType current_token_; /**< The current TokenType being processed*/
+  std::stack<std::string> operator_stack_ =
+      std::stack<std::string>(); /**< Stack for holding operators and
+                                    functions*/
+  TokenType current_token_ =
+      TokenType(); /**< The current TokenType being processed*/
 };
 }  // namespace s21
 

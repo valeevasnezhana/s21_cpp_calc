@@ -8,7 +8,7 @@
 namespace s21 {
 class BadExpression final : public std::runtime_error {
  public:
-  BadExpression(const std::string& what) : std::runtime_error(what) {}
+  explicit BadExpression(const std::string& what) : std::runtime_error(what) {}
 };
 }  // namespace s21
 
