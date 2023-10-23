@@ -5,8 +5,8 @@ Quick run: in directory src "make run"
 
 - To install the calculator, type `make install` in the terminal.
 - To uninstall the calculator, type `make uninstall`.
-- To open the calculator, type `make open` in the terminal after the installation.
 - To archive the program, type `make dist`.
+- To watch full documentation, type `make dvi`.
 
 
 <h3>Interface:</h3>
