@@ -25,7 +25,7 @@ Quick run: in directory src "make run"
 
 
 
-| Operator name   | Infix Form | 
+| Operator name   | Infix Form |
 |-----------------|------------|
 | Brackets        | (a + b)    |
 | Addition        | a + b      |
